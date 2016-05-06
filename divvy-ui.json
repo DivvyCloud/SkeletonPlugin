@@ -1,0 +1,15 @@
+{
+  "modules": [
+    {
+        "name": "HelloWorld",
+        "displayName": "HelloWorld",
+        "description": "Hellow World Plugin",
+        "label": "HelloWorld Tooltip",
+        "route": "helloworld",
+        "file": "init.js",
+        "icon": "cloud_done",
+        "theme": "subheader-blue-grey",
+        "admin_only": true
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "initial_js": ["init.js"],
+    "initial_modules": [
+        "plugin.py"
+    ]
+}
+
