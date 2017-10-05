@@ -1,5 +1,3 @@
-import os
-import json
 from DivvyBlueprints.v2 import Blueprint
 from DivvyPlugins.plugin_helpers import register_api_blueprint, unregister_api_blueprints
 
@@ -25,16 +23,23 @@ class metadata(PluginMetadata):
 
 blueprint = Blueprint('helloworld', __name__)
 
-@blueprint.routeAuthenticated('/list', methods=['POST'])
+
+# Actual url path will be:
+# <host>/plugin/<plugin dir name | helloworld>/list
+@blueprint.routeAuthenticated('/list', methods=['GET'])
 def get_list():
     data = [
-        {"Name" : "Hi", "From" : "Cow"},
-        {"Name" : "Hi", "From":"Chicken"},
-        {"Name" : "Hi", "From":"Rooster"},
-        {"Name" : "Hi", "From":"Duck"}]
+        {"Name": "Hi",
+         "From": "Cow"},
+        {"Name": "Hi",
+         "From": "Chicken"},
+        {"Name": "Hi",
+         "From": "Rooster"},
+        {"Name": "Hi",
+         "From": "Duck"}
+    ]
 
-
-    return JsonResponse(json.dumps(data))
+    return JsonResponse(data)
 
 
 def load():
